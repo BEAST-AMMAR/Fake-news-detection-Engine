@@ -1,0 +1,64 @@
+# ==============================================================================
+# Enterprise Git Ignore Rules
+# ==============================================================================
+
+# Python Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.env.local
+
+# Sensitive Credentials & Environment Files
+.env
+*.env
+! .env.example
+kaggle.json
+*.pem
+*.key
+*.p12
+
+# Large Training & Processed Datasets (>50MB)
+# (Use src/download_data.py to fetch Kaggle datasets locally)
+data/raw/*.csv
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.zip
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/sample/
+
+# Testing & Pytest Artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.cache
+
+# Distribution & Build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE & Editor Configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini

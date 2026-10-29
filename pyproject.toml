@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fake-news-detection-engine"
+version = "2.1.0"
+description = "High-Throughput Probabilistic NLP & Tribrid News Credibility Verification Engine"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "MUHAMMAD AMMAR", email = "muhammada.23.beai@acharya.ac.in" }
+]
+keywords = [
+    "fake-news-detection",
+    "naive-bayes",
+    "nlp",
+    "machine-learning",
+    "fact-checking",
+    "fastapi",
+    "tribrid-engine"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic"
+]
+
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.3.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "nltk>=3.8.0",
+    "wordcloud>=1.9.0",
+    "kaggle>=1.5.0",
+    "fpdf2>=2.7.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+    "httpx>=0.24.0",
+    "trafilatura>=1.6.0",
+    "tldextract>=5.0.0",
+    "pydantic>=2.0.0",
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0"
+]
+
+

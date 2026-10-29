@@ -1,0 +1,17 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+nltk
+wordcloud
+kaggle
+fpdf2
+fastapi
+uvicorn
+httpx
+trafilatura
+tldextract
+pydantic
+pytest
+pytest-asyncio

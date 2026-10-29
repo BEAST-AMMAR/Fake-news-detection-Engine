@@ -1,0 +1,56 @@
+PROJECT AUDIT LOG
+================================================================================
+PROJECT NAME: Fake News Detection System (Project Beta)
+TEAM: Team Beta (4 Members)
+DATE OF AUDIT: August 31, 2026
+================================================================================
+
+1. DATASET ACQUISITION
+- Source: Kaggle (emineyetm/fake-news-detection-datasets)
+- Files Used: data/raw/True.csv, data/raw/Fake.csv
+- Total Initial Records: 44,898
+- Class Distribution: Fake (23,481), Real (21,417)
+- Duplicate Records Removed: 209
+- Final Processed Records: 44,889
+
+2. PREPROCESSING & PIPELINE
+- Features Engineered: Combined 'title' and 'text' into 'title_text'
+- Cleaning Operations: URL removal, Lowercasing, Punctuation removal, WordNet Lemmatization, NLTK Stopword removal, Whitespace normalization.
+- Vectorization: TF-IDF (Term Frequency-Inverse Document Frequency)
+  - N-gram Range: (1, 2)
+  - Max Features: 10,000
+  - Vocabulary Size: 10,000
+
+3. DATA SPLITTING
+- Method: Stratified Train-Test Split
+- Test Size: 20% (8,978 samples)
+- Train Size: 80% (35,911 samples)
+- Random State: 42
+
+4. MODEL TRAINING & OPTIMIZATION
+- Baseline Model: Multinomial Naive Bayes (alpha=1.0)
+- Primary Model: Complement Naive Bayes
+- Optimization Method: GridSearchCV (5-Fold Cross-Validation)
+- Parameter Grid: alpha = [0.01, 0.1, 0.5, 1.0, 2.0, 5.0]
+- Best Hyperparameter Selected: alpha = 0.01
+- Note on Epochs: Naive Bayes is a probabilistic classifier based on Bayes' theorem, not a neural network. Therefore, it calculates probabilities in a single pass over the data and does not use "epochs" for iterative weight updating.
+
+5. EVALUATION METRICS (Best ComplementNB)
+- Accuracy: 0.9616
+- Precision: 0.9613
+- Recall: 0.9617
+- F1-Score (Macro): 0.9615
+- ROC-AUC: 0.9919
+
+6. ARTIFACTS & MODELS GENERATED
+- Vectorizer Saved: models/tfidf_vectorizer.pkl
+- Best Model Saved: models/complement_nb.pkl
+- Confusion Matrix: outputs/confusion_matrix.png
+- ROC Curve: outputs/roc_curve.png
+- Learning Curve: outputs/learning_curve.png
+- Word Cloud (Fake): outputs/wordcloud_fake.png
+- Word Cloud (Real): outputs/wordcloud_real.png
+
+================================================================================
+AUDIT COMPLETE. ALL ARTIFACTS VERIFIED AND SAVED.
+================================================================================
